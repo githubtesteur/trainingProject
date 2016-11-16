@@ -7,12 +7,6 @@ sections of build.xml that I don't care about for that particular
 project, set the project properties, clear out the sample sources, and
 get to work.
 
-## Setup
-
-Building this project requires that Ivy be available to Ant. All you
-need is ivy.jar in Ant's classpath (in your `$CLASSPATH`,
-`$ANT_HOME/lib`, or `~/.ant/lib`).
-
 ## Dependencies
 
 You will need to have Astyle installed and in your path for the
@@ -38,12 +32,6 @@ use the "bundle" target you need to have GnuPG set up in your path, a
 generated key pair, and a running `gpg-agent`, unless you like typing
 your passphrase a bunch of times in a row.
 
-## Philosophy
-
-I hate coding absolute paths in my build script and I hate including
-built files as part of the base project. My philosophy is that the
-*environment* should be set up so that the tool can easily find the
-external resources they need (JUnit, etc.) from the system or
 dependency manager. It's the system or dependency manager that
 provides the libraries. Anyone who has the proper development
 environment set up -- one that works across many projects -- should be
