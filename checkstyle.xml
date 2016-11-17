@@ -18,16 +18,6 @@
     - the JDK Api documentation http://java.sun.com/j2se/docs/api/index.html
 
     - some best practices
-
-  Checkstyle is very configurable. Be sure to read the documentation at
-  http://checkstyle.sf.net (or in your downloaded distribution).
-
-  Most Checks are configurable, be sure to consult the documentation.
-
-  To completely disable a check, just comment it out or delete it from the file.
-
-  Finally, it is worth reading the documentation.
-
 -->
 
 <module name="Checker">

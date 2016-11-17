@@ -54,14 +54,6 @@
     </jar>
   </target>
 
-  <target name="run" depends="compile" description="Run the application.">
-    <java classname="${main.class}" classpath="${build.dir}/classes" fork="yes">
-      <classpath refid="runtime.classpath"/>
-      <arg value="--name"/>
-      <arg value="Java"/>
-    </java>
-  </target>
-
   <target name="run-hotswap" depends="compile"
           description="Run the application in hotswap mode.">
     <java classname="${main.class}" classpath="${build.dir}/classes"
