@@ -34,31 +34,6 @@ public class SampleJavaProject implements Runnable {
     /** Command line parameter for --help. */
     @Parameter(names = { "-h", "--help" }, description = "print help message")
     private boolean help = false;
-
-    /**
-     * Print the "Hello, world!" string.
-     * @param args application input arguments
-     */
-    public static void main(final String[] args) {
-        /* Parse command line arguments. */
-        SampleJavaProject sjp = new SampleJavaProject();
-        try {
-            JCommander jc = new JCommander(sjp, args);
-            if (sjp.help) {
-                jc.usage();
-                return;
-            }
-        } catch (ParameterException e) {
-            System.err.println("error: " + e.getMessage());
-            new JCommander(new SampleJavaProject()).usage();
-            System.exit(-1);
-        }
-
-        sjp.run();
-    }
-
-    /**
-     * Print the "Hello, world!" string.
      */
     public final void sayHello() {
         System.out.printf("Hello, %s!%n", name);
