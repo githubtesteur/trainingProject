@@ -1,2 +1,3 @@
 New file context added
 New status added
+New line added
