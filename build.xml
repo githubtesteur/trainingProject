@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="SampleJavaProject" default="jar"
          xmlns:ivy="antlib:org.apache.ivy.ant">
-
+Line 1 written from the UPSTREAM repo will conflict
   <!-- Project-specific configuration -->
   <loadproperties srcfile="project.properties"/>
   <property name="main.class" value="${package.main}.${ant.project.name}"/>
@@ -37,6 +37,7 @@
     </copy>
   </target>
 
+Line 2 written from the UPSTREAM repo will NOT conflict
   <target name="jar" depends="compile"
           description="Generate the jarfile distributable.">
     <jar destfile="${dist.dir}/${base.name}.jar"
@@ -208,13 +209,7 @@
     <jar jarfile="${dist.dir}/bundle/${base.name}-sources.jar">
       <fileset dir="${src.dir}"/>
     </jar>
+
+Line 3 written from the UPSTREAM repo will NOT conflict : the deleted bloc bellow will confict
     <!-- Sign all the things. You'll need gpg-agent help here. -->
-    <apply executable="gpg" failonerror="true">
-      <arg value="--detach-sign"/>
-      <arg value="--armor"/>
-      <fileset dir="${dist.dir}/bundle"/>
-    </apply>
-    <!-- Pack it all up -->
-    <jar destfile="${dist.dir}/bundle.jar" basedir="${dist.dir}/bundle"/>
-  </target>
 </project>
